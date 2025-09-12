@@ -1,0 +1,56 @@
+/* Super simple login */
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6699ff, #8855ff);
+}
+
+.box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  width: 280px;
+  text-align: center;
+}
+
+.box h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.box input, .box button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.box input:focus {
+  border-color: #6699ff;
+  outline: none;
+}
+
+.box button[type="submit"] {
+  background: #6699ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.box button[type="submit"]:hover {
+  background: #5588ee;
+}
+
+.link {
+  background: none;
+  border: none;
+  color: #6699ff;
+  cursor: pointer;
+  text-decoration: underline;
+}
