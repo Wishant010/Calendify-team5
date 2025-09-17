@@ -3,7 +3,7 @@ export const testAccounts = {
     admin: {
         name: 'Admin User',
         email: 'admin@example.com',
-        password: 'admin123', // In a real app, never store passwords in plain text
+        password: 'admin123', 
         role: 'admin' as const
     },
     users: [
@@ -11,7 +11,7 @@ export const testAccounts = {
             id: 1,
             name: 'John Doe',
             email: 'john@example.com',
-            password: 'user123', // In a real app, never store passwords in plain text
+            password: 'user123', 
             role: 'user'
         },
         {
