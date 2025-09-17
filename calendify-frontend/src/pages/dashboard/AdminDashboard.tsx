@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../shared/Dashboard.css';
+import styles from './Dashboard.module.css';
 
 interface AdminDashboardProps {
     onLogout?: () => void;
@@ -41,7 +41,7 @@ function AdminDashboard({ onLogout }: AdminDashboardProps) {
                 return (
                     <div>
                         <h2>Gebruikersbeheer</h2>
-                        <table className="admin-table">
+                        <table className={styles['admin-table']}>
                             <thead>
                                 <tr>
                                     <th>Naam</th>
@@ -65,7 +65,7 @@ function AdminDashboard({ onLogout }: AdminDashboardProps) {
                 return (
                     <div>
                         <h2>Alle Evenementen</h2>
-                        <table className="admin-table">
+                        <table className={styles['admin-table']}>
                             <thead>
                                 <tr>
                                     <th>Titel</th>
@@ -99,28 +99,28 @@ function AdminDashboard({ onLogout }: AdminDashboardProps) {
     };
 
     return (
-        <div className="dashboard-container">
-            <div className="sidebar">
+        <div className={styles['dashboard-container']}>
+            <div className={styles.sidebar}>
                 <h1>Admin Dashboard</h1>
-                <p className="user-info">{adminData.name}</p>
-                <div className="sidebar-menu">
+                <p className={styles['user-info']}>{adminData.name}</p>
+                <div className={styles['sidebar-menu']}>
                     {menuItems.map((item) => (
                         <button
                             key={item.id}
-                            className={`menu-item ${activeMenu === item.id ? 'active' : ''}`}
+                            className={`${styles['menu-item']} ${activeMenu === item.id ? styles.active : ''}`}
                             onClick={() => setActiveMenu(item.id)}
                         >
                             {item.label}
                         </button>
                     ))}
                 </div>
-                <button className="logout-btn" onClick={onLogout || (() => alert('Uitloggen'))}>
+                <button className={styles['logout-btn']} onClick={onLogout || (() => alert('Uitloggen'))}>
                     Uitloggen
                 </button>
             </div>
 
-            <div className="main-content">
-                <div className="content-area">
+            <div className={styles['main-content']}>
+                <div className={styles['content-area']}>
                     {getContentForMenu(activeMenu)}
                 </div>
             </div>

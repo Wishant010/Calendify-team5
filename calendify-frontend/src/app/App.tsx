@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import LoginPage from './components/LoginPage';
-import UserDashboard from './components/dashboard/user/UserDashboard';
-import AdminDashboard from './components/dashboard/admin/AdminDashboard';
+import LoginPage from '../pages/login/LoginPage';
+import UserDashboard from '../pages/dashboard/UserDashboard';
+import AdminDashboard from '../pages/dashboard/AdminDashboard';
 import './App.css';
 
 interface User {

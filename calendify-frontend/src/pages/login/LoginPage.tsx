@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './LoginPage.css';
-import { testAccounts, checkCredentials } from './login/testAccounts';
+import styles from './LoginPage.module.css';
+import { testAccounts, checkCredentials } from './testAccounts';
 
 interface LoginPageProps {
   onLogin: (user: { name: string; email: string; role: 'admin' | 'user' }) => void;
@@ -27,8 +27,8 @@ function LoginPage({ onLogin }: LoginPageProps) {
   }
 
   return (
-    <div className="container">
-      <div className="box">
+    <div className={styles.container}>
+      <div className={styles.box}>
         <h1>Calendify</h1>
         <form onSubmit={handleLogin}>
           <input
@@ -45,18 +45,18 @@ function LoginPage({ onLogin }: LoginPageProps) {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          {error && <p className="error-message">{error}</p>}
+          {error && <p className={styles['error-message']}>{error}</p>}
           <button type="submit">Login</button>
         </form>
 
-        <div className="test-accounts-mini">
-          <div className="test-title">test</div>
-          <div className="test-line">admin@example.com / admin123</div>
-          <div className="test-line">john@example.com / user123</div>
+        <div className={styles['test-accounts-mini']}>
+          <div className={styles['test-title']}>test</div>
+          <div className={styles['test-line']}>admin@example.com / admin123</div>
+          <div className={styles['test-line']}>john@example.com / user123</div>
         </div>
 
         <p>
-          Geen account? <button className="link">Registreer</button>
+          Geen account? <button className={styles.link}>Registreer</button>
         </p>
       </div>
     </div>
